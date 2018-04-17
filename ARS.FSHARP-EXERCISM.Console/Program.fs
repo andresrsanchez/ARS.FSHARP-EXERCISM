@@ -3,11 +3,10 @@
 open System
 open System.Text.RegularExpressions
 
-let exercism_Year = 
-    printfn "Give me a year: "
-    let year = System.Console.ReadLine() |> int
-    printf "Result : %b" (year % 4 = 0 && year % 100 <> 0 && year % 400 = 0) //leap condition
-    Console.ReadLine() |> ignore
+//let exercism_Year = 
+//    printfn "Give me a year: "
+//    let year = System.Console.ReadLine() |> int
+//    printf "Result : %b" (year % 4 = 0 && year % 100 <> 0 && year % 400 = 0) //leap condition
 
 let exercism_Bob = 
     while true do
@@ -19,10 +18,14 @@ let exercism_Bob =
         match something with
         | FirstRegexGroup "^¿?(.*)\?" something -> printf "Sure."
         | FirstRegexGroup "^[A-Z]*$" something -> printf "Whoa, chill out!"
-        | _ -> printfn "WTF u want to say"
+        | FirstRegexGroup "^¿?[A-Z]*\?" something -> printf "Calm down, I know what I'm doing!"
+        | FirstRegexGroup "^$" something -> printf "Fine. Be that way!"
+        | _ -> printfn "Whatever"
+        printfn "%s" Environment.NewLine
 
 [<EntryPoint>]
 let main argv =
-    exercism_Year |> ignore
+    exercism_Bob |> ignore
+    Console.ReadLine() |> ignore
     0 // return an integer exit code
 
