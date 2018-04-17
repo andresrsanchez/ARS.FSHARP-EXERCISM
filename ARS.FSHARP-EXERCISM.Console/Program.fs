@@ -3,10 +3,13 @@
 open System
 open System.Text.RegularExpressions
 
-//let exercism_Year = 
-//    printfn "Give me a year: "
-//    let year = System.Console.ReadLine() |> int
-//    printf "Result : %b" (year % 4 = 0 && year % 100 <> 0 && year % 400 = 0) //leap condition
+let exercism_MultiplesSum = 
+    printfn "Give me a number: "
+    let number = System.Console.ReadLine() |> int
+    let sum = ref 0
+    for i in 1 .. number do
+        if number % i = 0 then sum := !sum + i
+    printf "%i" !sum
 
 let exercism_Bob = 
     while true do
@@ -23,9 +26,13 @@ let exercism_Bob =
         | _ -> printfn "Whatever"
         printfn "%s" Environment.NewLine
 
+let exercism_Year = 
+    printfn "Give me a year: "
+    let year = System.Console.ReadLine() |> int
+    printf "Result : %b" (year % 4 = 0 && year % 100 <> 0 && year % 400 = 0) //leap condition
+
 [<EntryPoint>]
 let main argv =
-    exercism_Bob |> ignore
     Console.ReadLine() |> ignore
     0 // return an integer exit code
 
