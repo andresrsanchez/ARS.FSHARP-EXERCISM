@@ -3,6 +3,13 @@
 open System
 open System.Text.RegularExpressions
 
+let exercism_OneFromBoth = 
+    printfn "Give me a name: "
+    let name = System.Console.ReadLine()
+    let message addName = 
+        printf "One for %s, one for me." addName
+    if name = "" then message "you" else message name
+
 let exercism_MultiplesSum = 
     printfn "Give me a number: "
     let number = System.Console.ReadLine() |> int
