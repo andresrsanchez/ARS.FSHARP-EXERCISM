@@ -3,6 +3,9 @@
 open System
 open System.Text.RegularExpressions
 
+let exercism_AgeInSeconds = 
+    
+
 let exercism_OneFromBoth = 
     printfn "Give me a name: "
     let name = System.Console.ReadLine()
