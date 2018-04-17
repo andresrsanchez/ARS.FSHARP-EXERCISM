@@ -3,7 +3,16 @@
 open System
 open System.Text.RegularExpressions
 
+type ageType = {Name:string; input:int; value:double}
 let exercism_AgeInSeconds = 
+    let getAge input key = input / 60 / 60 / 24 / key
+    let message age:ageType = 
+        printf "%s: orbital period %i Earth years" age.Name getAge age.input age.value
+    printfn "Give me a numbers of seconds: "
+    let input = System.Console.ReadLine() |> int
+    //message "Mars" input 4.0
+        
+        
     
 
 let exercism_OneFromBoth = 
